@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
+import NewDrive from './NewDrive.js';
 import Login from './Login';
 
 class App extends Component {
@@ -7,6 +8,7 @@ class App extends Component {
     return (
       <div className="row">
         <div className="App columns small-12 medium-6 large-4 xlarge-3 small-centered">
+         <NewDrive />
          <Login />
         </div>
       </div>
