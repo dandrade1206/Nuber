@@ -1,0 +1,20 @@
+{
+    "rides":[
+    {
+        "driver":"",
+        "riders":[],
+        "date":"",
+        "time":"",
+        "numPass": 0,
+        "direction":"",
+        "notes":""
+    }
+],
+"users": [
+    {
+    "name": "",
+    "email":"",
+    "profileLink": ""
+}
+]
+}
