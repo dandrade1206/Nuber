@@ -20,7 +20,7 @@ class App extends Component {
           <FilterRides />
           <ListRides />
 
-         <NewDrive />
+          <NewDrive />
           <RiderDetail />
 
         </div>
