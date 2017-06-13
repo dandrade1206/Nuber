@@ -41,7 +41,7 @@ const FilterRides = (props) => {
             </div>
             <div className="row">
                 <div className="small-12">
-                    <label for="text-switch-3">Direction</label>
+                    <label htmlFor="text-switch-3">Direction</label>
                     <div className="switch switch-text large">
                         <input className="switch-input" id="text-switch-3" type="checkbox" name="exampleSwitch" />
                         <label className="switch-paddle" htmlFor="text-switch-3">

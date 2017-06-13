@@ -14,7 +14,7 @@ return (
         <thead>
             <tr>
                 <th width="500"><strong>Destination</strong></th>
-                <th width="100" class="text-right"><strong>Time</strong></th>
+                <th width="100" className="text-right"><strong>Time</strong></th>
                 <th width="400"><strong>Driver/Rider</strong></th>
                 <th width="400"><strong>Spots</strong></th>
                 <th width="400"><strong>Reserve</strong></th>
@@ -44,6 +44,7 @@ return (
             </tr>
         </tbody>
     </table>
+    <button>New Drive</button>
     </div>
 )
 
