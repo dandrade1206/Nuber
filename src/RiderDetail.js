@@ -12,7 +12,7 @@ class RiderDetail extends Component {
                 <h2> <a>Daniel Andrade</a> </h2>
                 <br/>
                 <textarea readonly> description of driver </textarea>
-                <button> Cancel </button>
+                <button className='button alert'> Cancel Ride </button>
             </div>
     );
   }
