@@ -6,7 +6,7 @@ const datetime = (state = {}, action) => {
     case 'SET_DATE': 
       return {
         ...state,
-        date: moment(action.newDate).format('MM/DD/YYYY')
+        date: moment(action.newDate, 'YYYY-MM-DD').format('MM/DD/YYYY')
       }
     case 'SET_HOUR':
       return {
