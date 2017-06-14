@@ -1,10 +1,10 @@
 import React from 'react'
-const FilterRides = (props) => {
+const FilterRides = ({datetime, direction, onClick, onChange}) => {
     return(
         <div>
             <div className="row">
                 <div className="small-5 columns">
-                    <input type="date" name='date' placeholder='Select a date'/>
+                    <input type="date" name='date' onChange={onChange} placeholder='Select a date'/>
                 </div>
                 <div className="small-2 columns">
                     <select>
@@ -43,9 +43,8 @@ const FilterRides = (props) => {
                 <div className="small-12">
                     <label htmlFor="text-switch-3">Direction</label>
                     <div className="switch switch-text large">
-                        <input className="switch-input" id="text-switch-3" type="checkbox" name="exampleSwitch" />
+                        <input className="switch-input" id="text-switch-3" type="checkbox" name="exampleSwitch" value='direction' onClick={e => {onClick()}} />
                         <label className="switch-paddle" htmlFor="text-switch-3">
-                            <span className="show-for-sr">Screen reader text only</span>
                             <span className="switch-active" aria-hidden="true">FR</span>
                             <span className="switch-inactive" aria-hidden="true">DT</span>
                         </label>

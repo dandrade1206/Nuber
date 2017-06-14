@@ -1,13 +1,12 @@
-const timedate = (state = initialstate, action) => {
+import moment from 'moment';
+
+const datetime = (state = '', action) => {
   switch (action.type) {
-    case 'FORMAT_TIMEDATE':
-      return [
-                ...state,
-                moment(formatDate).format('DD/MM/YYYY')
-            ]
+    case 'SET_DATETIME':
+      return moment(action.date).format('DD/MM/YYYY')
     default:
       return state
   }
 }
 
-export default timedate
+export default datetime
