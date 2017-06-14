@@ -6,7 +6,7 @@ const direction = (state = '', action) => {
             }
             return 'Franklin'
         default:
-            return 'Franklin'        
+            return state;        
     }
 }
 

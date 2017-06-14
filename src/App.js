@@ -5,11 +5,13 @@ import Login from './Login';
 import Dashboard from './Dashboard';
 import RiderDetail from './RiderDetail';
 import CreateRide from './CreateRide';
+import axios from 'axios';
 
 import { Link, BrowserRouter as Router, Route} from 'react-router-dom';
 
 class App extends Component {
   componentDidMount(){
+    
     //make Async call to get initial App info from DB here
     //dispatch (GETTING_STUFF) before async call
     //dispatch (GOT_STUFF) once done  -- loading spinner

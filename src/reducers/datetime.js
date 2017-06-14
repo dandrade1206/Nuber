@@ -1,7 +1,6 @@
 import moment from 'moment';
 
-
-const datetime = (state = {}, action) => {
+const datetime = (state = {date: moment().format('MM/DD/YYYY')}, action) => {
   switch (action.type) {
     case 'SET_DATE': 
       return {
