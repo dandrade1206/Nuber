@@ -107,19 +107,22 @@ module.exports=(app)=>{
         FB.users.orderByKey().once("value")
             .then((snapshot)=>{
                 var VALID_USER = false
+                var user_key=''
                 snapshot.forEach((childSnapshot)=> {                   
                     const validUser = childSnapshot.val().email;
                     if(validUser === req.params.userid) {
                         VALID_USER = true;
+                        user_key = childSnapshot.key
                         return true
                     }
                 });
-                res.json({statusCode:'OK', VALID_USER})
+                res.json({statusCode:'OK', VALID_USER, user_key})
             })
             .catch((error)=>{
                 res.json({statusCode:'UNABLE_TO_LOGIN'})
             })    
     })
+
 
     //delete ride
     app.get('/cancelride/:rideid', (req, res)=>{
