@@ -1,15 +1,12 @@
 import React, { Component } from 'react';
 import './App.css';
-
 import Header from './Header'
-// import FilterRides from './FilterRides'
-import ListRides from './ListRides'
-
-import NewDrive from './NewDrive.js';
 import Login from './Login';
+import Dashboard from './Dashboard';
 import RiderDetail from './RiderDetail';
-import FilterRidesContainer from './FilterRidesContainer'
+import CreateRide from './CreateRide';
 
+import { Link, BrowserRouter as Router, Route} from 'react-router-dom';
 
 class App extends Component {
   componentDidMount(){
@@ -23,18 +20,17 @@ class App extends Component {
 
   render() {
     return (
-      <div className="row">
-        <div className="App columns small-12 medium-6 large-4 xlarge-4 small-centered">
-          <Header />
-          <Login />
-          <FilterRidesContainer />
-          <ListRides />
-
-          <NewDrive />
-          <RiderDetail />
-
+    <Router>
+        <div className="row">
+          <div className="App columns small-12 medium-6 large-4 xlarge-4 small-centered">
+            <Header />
+            <Route exact path="/" component={Login}/>
+            <Route path="/dashboard" component={Dashboard}/>
+            <Route path="/create" component={CreateRide}/>
+            <Route path="/detail" component={RiderDetail}/>
+          </div>
         </div>
-      </div>
+      </Router>
     );
   }
 }

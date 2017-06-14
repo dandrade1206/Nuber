@@ -1,6 +1,12 @@
 import React from 'react'
 
-const ListRides=(props) =>{
+const ListRides=({history}) =>{
+
+const handleClick = (event) => {
+    event.preventDefault()
+
+    history.push('/create');
+  }
 
 return (
     <div>
@@ -44,7 +50,9 @@ return (
             </tr>
         </tbody>
     </table>
-    <button>New Drive</button>
+                        <button onClick={handleClick}>
+                        New Drive
+                    </button>
     </div>
 )
 

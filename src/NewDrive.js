@@ -1,6 +1,14 @@
 import React from 'react';
 
-const NewDrive = () => {
+const NewDrive = ({history}) => {
+
+const handleClick = (event) => {
+    event.preventDefault()
+
+    history.push('/dashboard'); 
+
+  }
+    
     return (
         <div className="NewDrive">
             <div className="row">
@@ -8,7 +16,7 @@ const NewDrive = () => {
                     <input className="columns small-3" type="text" placeholder="#"/>
             </div>
             <div className="row"><textarea rows="6" className="columns small-11 small-centered" placeholder="Describe location to meet and your attire, so riders can find you!"/></div>
-            <div className="row"><button className="columns small-6 small-centered">Confirm Drive</button></div>
+            <div className="row"><button className="columns small-6 small-centered" onClick={handleClick}>Confirm Drive</button></div>
         </div>
     )
 }
