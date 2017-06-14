@@ -1,5 +1,5 @@
 import React from 'react'
-import FilterRidesContainer from './containers/FilterRidesContainer';
+import FilterRidesContainer from './FilterRidesContainer';
 import NewDrive from './NewDrive'
 
 const CreateRide = (props) => {
