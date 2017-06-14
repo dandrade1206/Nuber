@@ -25,7 +25,7 @@ const ride = (state = {}, action) => {
 
             let tempRiders = [...state.riders]
             tempRiders.splice(action.riderid, 1);
-            
+
             return {
                 ...state,
                 riders: tempRiders
@@ -53,3 +53,5 @@ const rides = (state = [], action) => {
             return state;
     }
 }
+
+export default rides;

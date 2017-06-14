@@ -1,10 +1,13 @@
-const setdirection = (state = initialstate, action) => {
-  switch (action.type) {
-    case 'SET_DIRECTION':
-      return action.filter
-    default:
-      return state
-  }
+const direction = (state = '', action) => {
+    switch(action.type) {
+        case 'SWITCH_DIRECTION':
+            if (state === 'Franklin'){
+                return 'Downtown'
+            }
+            return 'Franklin'
+        default:
+            return 'Franklin'        
+    }
 }
 
-export default setdirection
+export default direction;
