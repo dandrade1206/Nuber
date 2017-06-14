@@ -9,6 +9,15 @@ import CreateRide from './CreateRide';
 import { Link, BrowserRouter as Router, Route} from 'react-router-dom';
 
 class App extends Component {
+  componentDidMount(){
+    //make Async call to get initial App info from DB here
+    //dispatch (GETTING_STUFF) before async call
+    //dispatch (GOT_STUFF) once done  -- loading spinner
+  }
+
+
+// Routing will determine what screen needs to show
+
   render() {
     return (
     <Router>
