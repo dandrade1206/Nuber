@@ -8,10 +8,19 @@ import ListRides from './ListRides'
 import NewDrive from './NewDrive.js';
 import Login from './Login';
 import RiderDetail from './RiderDetail';
-import FilterRidesContainer from './containers/FilterRidesContainer'
+import FilterRidesContainer from './FilterRidesContainer'
 
 
 class App extends Component {
+  componentDidMount(){
+    //make Async call to get initial App info from DB here
+    //dispatch (GETTING_STUFF) before async call
+    //dispatch (GOT_STUFF) once done  -- loading spinner
+  }
+
+
+// Routing will determine what screen needs to show
+
   render() {
     return (
       <div className="row">

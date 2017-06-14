@@ -1,11 +1,11 @@
-import date from './date';
+import datetime from './datetime';
 import direction from './direction';
 import rides from './rides';
 import user from './user';
 import { combineReducers } from 'redux';
 
 const rootReducer = combineReducers({ 
-    date, 
+    datetime, 
     direction, 
     rides, 
     user
