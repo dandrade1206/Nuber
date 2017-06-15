@@ -10,15 +10,17 @@ class Login extends Component {
 
   handleClick = (event) => {
     event.preventDefault()
-    console.log(this.state.email);
-    axios.get(`http://localhost:8000/login/${this.state.email}`)
+    axios.get(`https://nuberapi.herokuapp.com/login/${this.state.email}`)
       .then((res) => {
-        console.log(res);
+        if (res.data.VALID_USER) {
+          this.props.loginUser(res.data.user_key, this.state.name, this.state.email);
+        }       
       })
       .catch((err) => {
+        // Need to add some error messaging to the front-end here..
         console.log(err);
       })
-    // this.props.history.push('/dashboard');
+    this.props.history.push('/dashboard');
   }
 
   handleChange = (event) => {
@@ -28,7 +30,6 @@ class Login extends Component {
     if (event.target.name === 'email'){
       this.setState({ email: event.target.value });
     }
-    console.log(event.target);
   }
   
   render() {

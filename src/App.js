@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import Header from './Header'
-import Login from './Login';
+import LoginContainer from './LoginContainer';
 import Dashboard from './Dashboard';
 import RiderDetail from './RiderDetail';
 import CreateRide from './CreateRide';
@@ -26,7 +26,7 @@ class App extends Component {
         <div className="row">
           <div className="App columns small-12 medium-6 large-4 xlarge-4 small-centered">
             <Header />
-            <Route exact path="/" component={Login}/>
+            <Route exact path="/" component={LoginContainer}/>
             <Route path="/dashboard" component={Dashboard}/>
             <Route path="/create" component={CreateRide}/>
             <Route path="/detail" component={RiderDetail}/>

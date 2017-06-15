@@ -4,7 +4,6 @@ import { connect } from 'react-redux';
 import moment from 'moment';
 
 function mapStateToProps(store, props) {
-    console.log(store.datetime.date);
     return {
         datetime: {
           date: moment(store.datetime.date, 'MM/DD/YYYY').format('YYYY-MM-DD'),
@@ -27,15 +26,15 @@ function mapDispatchToProps(dispatch, props) {
         }),
         processHour: (event) => dispatch({
             type: "SET_HOUR",    
-            newHour: event.target.selectedOptions[0].text
+            newHour: event.target.value
         }),
         processMin: (event) => dispatch({
             type: "SET_MIN",    
-            newMinute: event.target.selectedOptions[0].text
+            newMinute: event.target.value
         }),
         processAMPM: (event) => dispatch({
             type: "SET_AMPM",
-            newAMPM: event.target.selectedOptions[0].text
+            newAMPM: event.target.value
         })
 
     }
