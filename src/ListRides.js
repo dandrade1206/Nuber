@@ -1,11 +1,11 @@
 import React from 'react'
 
-const ListRides=({history}) =>{
-
+const ListRides=(props) =>{
+console.log(JSON.stringify(props.rides.rides))
 const handleClick = (event) => {
     event.preventDefault()
 
-    history.push('/create');
+    props.history.push('/create');
   }
 
 return (

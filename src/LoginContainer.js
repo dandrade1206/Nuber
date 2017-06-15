@@ -18,6 +18,10 @@ function mapDispatchToProps(dispatch, props) {
             key,
             name,
             email
+        }),
+        setRides: (rides) => dispatch({
+            type: "FETCH_MY_RIDES",
+            rides
         })
     }
 }

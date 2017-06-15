@@ -49,6 +49,10 @@ const rides = (state = [], action) => {
         case 'RESERVE': // same as Cancel
         case 'CANCEL':
             return state.map(r => ride(r, action))
+        case 'FETCH_MY_RIDES':
+            return {
+                rides: action.rides
+            }
         default:
             return state;
     }

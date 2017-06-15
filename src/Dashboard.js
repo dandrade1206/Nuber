@@ -1,13 +1,14 @@
 import React from 'react'
 import FilterRidesContainer from './FilterRidesContainer';
+import ListRidesContainer from './ListRidesContainer'
 import ListRides from './ListRides'
 
 const Dashboard = (props) => {
-    console.log(props)
+    // console.log(props)
     return(
         <div>
             <FilterRidesContainer/>
-            <ListRides history={props.history}/>
+            <ListRidesContainer />
         </div>
     )
 }
