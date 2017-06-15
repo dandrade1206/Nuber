@@ -4,17 +4,20 @@ const ListRides=(props) =>{
 
 
 console.log('Listrides', props.rides)
-const Rides = props.rides.map((ride)=>{
+const rides = props.rides.map((ride)=>{
 
     var uType = "Rider"
     if(ride.driver === props.user) uType = "Driver"
-
+    let riders = ride.passengers;
+    if (ride.riders){
+        let riders = ride.passengers - Object.keys(ride.riders).length;
+    }
     return(
-            <tr key={props.user+uType+ride.direction}>
+            <tr key={props.user+uType+ride.direction+ride.note+Date.now()}>
                 <td>{ride.direction}</td>
                 <td>{ride.time}</td>
-                <td>Rider</td>
-                <td>{Object.keys(ride.riders).length}</td>
+                <td>{uType}</td>
+                <td>{riders}</td>
                 <td></td>
             </tr>
     )
@@ -45,7 +48,7 @@ return (
             </tr>
         </thead>
         <tbody>
-            {Rides}
+            {rides}
         </tbody>
     </table>
                         <button onClick={handleClick}>

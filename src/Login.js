@@ -21,7 +21,9 @@ class Login extends Component {
   handleClick = (event) => {
     event.preventDefault()
 
-      this.setState({ errors: {}, sumbitted: true });
+      this.setState({ errors: {}, submitted: true });
+
+    console.log(this.state.email);
 
     axios.get(`https://nuberapi.herokuapp.com/login/${this.state.email}`)
       .then((res) => {
@@ -53,51 +55,27 @@ class Login extends Component {
   }
 
 
-      handleChange = ({ name, value, error }) => {
-        const { errors, username, email } = this.state;
-        
-        if(!this.state.email){this.blockSubmit()}
-
-        const newState = {
-            username: {
-                ...username,
-                [name]: value
-            },
-            email: {
-                ...email,
-                [name]: value
-            },
-            errors: {
-                ...errors,
-                [name]: error
-            }
-        }
-        this.setState(newState);
+  handleChange = (event) => {
+    if (event.target.name === 'name'){
+      this.setState({ username: event.target.value });
     }
+    if (event.target.name === 'email'){
+      this.setState({ email: event.target.value });
+    }
+  }
   
   render() {
 
     return (    
-            <form onSubmit={this.handleClick}>
-
-            <TextFieldGroup
-              name="Name"
-              placeholder="Name"
-              validate={ validateName }
-              onChange={this.handleChange}
-            />
-
-            <TextFieldGroup
-              name="email"
-              placeholder="Email Address"
-              validate={ validateEmail }
-              onChange={this.handleChange}
-            /> 
-            
-                    
-          <button type="submit" disabled={!this.state.email}>Start Nubering!</button>
-          <hr />
-          </form>
+            <form onChange={this.handleChange}>
+                     <hr />
+                     <input placeholder="Enter Name" name="name" type="text" value={this.state.name} />
+                     <input placeholder="Email Address" name="email" type="text" value={this.state.email} />
+                     <button onClick={this.handleClick}>
+                         Start Nubering!
+                     </button>
+                     <hr />
+           </form>   
     );
   }
 }
