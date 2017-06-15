@@ -15,7 +15,21 @@ class Login extends Component {
         if (res.data.VALID_USER) {
           console.log(res.data);
           this.props.loginUser(res.data.user_key, this.state.name, this.state.email);
-          this.props.history.push('/dashboard');
+
+
+          axios.get(`https://nuberapi.herokuapp.com/myrides/${res.data.user_key}`)
+            .then((res)=>{
+              this.props.setRides(res.data.rides)
+
+            })
+            .then(()=>{
+              axios.get(`https://nuberapi.herokuapp.com/driver/${res.data.user_key}`)
+                .then((res)=>{
+                  this.props.setDrives(res.data.rides)
+                  this.props.history.push('/dashboard');
+                })              
+            })
+
         }       
       })
       .catch((err) => {

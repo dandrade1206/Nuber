@@ -1,11 +1,29 @@
 import React from 'react'
 
-const ListRides=({history}) =>{
+const ListRides=(props) =>{
+
+
+console.log('Listrides', props.rides)
+const Rides = props.rides.map((ride)=>{
+
+    var uType = "Rider"
+    if(ride.driver === props.user) uType = "Driver"
+
+    return(
+            <tr key={props.user+uType+ride.direction}>
+                <td>{ride.direction}</td>
+                <td>{ride.time}</td>
+                <td>Rider</td>
+                <td>{Object.keys(ride.riders).length}</td>
+                <td></td>
+            </tr>
+    )
+})
 
 const handleClick = (event) => {
     event.preventDefault()
 
-    history.push('/create');
+    props.history.push('/create');
   }
 
 return (
@@ -27,27 +45,7 @@ return (
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <td>DT</td>
-                <td>10.30</td>
-                <td>Driver</td>
-                <td>4</td>
-                <td><input type='checkbox'/></td>
-            </tr>
-            <tr>
-                <td>FR</td>
-                <td>11.30</td>
-                <td>Driver</td>
-                <td>4</td>
-                <td><input type='checkbox'/></td>
-            </tr>
-            <tr>
-                <td>DT</td>
-                <td>12.30</td>
-                <td>Rider</td>
-                <td>1</td>
-                <td><input type='checkbox'/></td>
-            </tr>
+            {Rides}
         </tbody>
     </table>
                         <button onClick={handleClick}>
