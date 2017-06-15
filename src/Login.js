@@ -22,7 +22,7 @@ class Login extends Component {
         const errorMsgs = Object.keys(this.state.errors).filter((key) => this.state.errors[key]);
         const blankEmail = Object.keys(this.state.email).filter((key) => this.state.email[key] === '');
         return (errorMsgs.length > 0 || blankEmail.length > 0);
-    }
+  }
 
   handleClick = (event) => {
     event.preventDefault()

@@ -15,10 +15,9 @@ const rides = props.rides.map((ride)=>{
     return(
             <tr key={props.user+uType+ride.direction+ride.note+Date.now()}>
                 <td>{ride.direction}</td>
-                <td>{ride.time}</td>
+                <td>{ride.date} {ride.time}</td>
                 <td>{uType}</td>
                 <td>{riders}</td>
-                <td></td>
             </tr>
     )
 })
@@ -40,11 +39,10 @@ return (
 
         <thead>
             <tr>
-                <th width="500"><strong>Destination</strong></th>
-                <th width="100" className="text-right"><strong>Time</strong></th>
+                <th width="200"><strong>Destination</strong></th>
+                <th width="300"><strong>Time</strong></th>
                 <th width="400"><strong>Driver/Rider</strong></th>
                 <th width="400"><strong>Spots</strong></th>
-                <th width="400"><strong>Reserve</strong></th>
             </tr>
         </thead>
         <tbody>

@@ -55,8 +55,8 @@ const FilterRides = ({user, datetime, direction, handleSwitch, processDate, proc
                     <div className="switch switch-text large">
                         <input className="switch-input" id="text-switch-3" type="checkbox" name="exampleSwitch" checked={(direction === 'Franklin')} onChange={e => {handleSwitch()}} />
                         <label className="switch-paddle" htmlFor="text-switch-3">
-                            <span className="switch-active" aria-hidden="true">FR</span>
-                            <span className="switch-inactive" aria-hidden="true">DT</span>
+                            <span className="switch-active text-left" aria-hidden="true">Franklin</span>
+                            <span className="switch-inactive" aria-hidden="true">Downtown</span>
                         </label>
                     </div>     
                 </div>
