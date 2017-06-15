@@ -5,6 +5,12 @@ import TextFieldGroup from './TextFieldGroup';
 import { validateName, validateEmail } from './validations';
 
 class Login extends Component {
+  constructor(props){
+    super(props)
+    if(props.user.key){
+      this.loginAndRefresh();
+    }
+  }
   state = {
     username: '',
     email: '',
@@ -20,10 +26,17 @@ class Login extends Component {
 
   handleClick = (event) => {
     event.preventDefault()
+    this.loginAndRefresh()
+  }
+
+
+  loginAndRefresh = () =>{
 
       this.setState({ errors: {}, submitted: true });
 
     console.log(this.state.email);
+if(!this.props.user.key) {
+
 
     axios.get(`https://nuberapi.herokuapp.com/login/${this.state.email}`)
       .then((res) => {
@@ -51,9 +64,27 @@ class Login extends Component {
         // Need to add some error messaging to the front-end here..
         console.log(err);
       })
+ } else {
+          axios.get(`https://nuberapi.herokuapp.com/myrides/${this.props.user.key}`)
+            .then((res)=>{
+              this.props.setRides(res.data.rides)
 
+            })
+            .then(()=>{
+              axios.get(`https://nuberapi.herokuapp.com/driver/${this.props.user.key}`)
+                .then((res)=>{
+                  this.props.setDrives(res.data.rides)
+                  this.props.history.push('/dashboard');
+                })              
+            })
+
+      .catch((err) => {
+        // Need to add some error messaging to the front-end here..
+        console.log(err);
+      })
+
+ }   
   }
-
 
   handleChange = (event) => {
     if (event.target.name === 'name'){

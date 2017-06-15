@@ -25,7 +25,7 @@ class NewDrive extends React.Component {
         axios.post('https://nuberapi.herokuapp.com/newride', newRideData)
             .then((res) => {
                 console.log(res.data);
-                this.props.history.push('/dashboard'); 
+                this.props.history.push('/'); 
             })
             .catch((err) => {
                 console.log(err);
