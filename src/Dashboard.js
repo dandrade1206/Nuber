@@ -3,7 +3,7 @@ import FilterRidesContainer from './FilterRidesContainer';
 import ListRidesContainer from './ListRidesContainer'
 
 const Dashboard = (props) => {
-    // console.log(props)
+
     return(
         <div>
             <FilterRidesContainer/>

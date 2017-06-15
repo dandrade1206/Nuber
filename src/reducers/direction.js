@@ -1,4 +1,4 @@
-const direction = (state = '', action) => {
+const direction = (state = 'Downtown', action) => {
     switch(action.type) {
         case 'SWITCH_DIRECTION':
             if (state === 'Franklin'){

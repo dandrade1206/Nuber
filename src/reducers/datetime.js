@@ -20,7 +20,7 @@ const datetime = (state = {date: moment().format('MM/DD/YYYY')}, action) => {
     case 'SET_AMPM':
       return {
         ...state,
-        AMPM: action.newAMPM
+        ampm: action.newAMPM
       }
     default:
       return state

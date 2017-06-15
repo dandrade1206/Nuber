@@ -5,9 +5,8 @@ import LoginContainer from './LoginContainer';
 import Dashboard from './Dashboard';
 import RiderDetail from './RiderDetail';
 import CreateRide from './CreateRide';
-import axios from 'axios';
 
-import { Link, BrowserRouter as Router, Route} from 'react-router-dom';
+import { BrowserRouter as Router, Route} from 'react-router-dom';
 
 class App extends Component {
   componentDidMount(){
