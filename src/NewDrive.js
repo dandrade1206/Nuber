@@ -32,6 +32,7 @@ class NewDrive extends React.Component {
             })
     }
 
+
     handleChange = (event) => {
         if (event.target.name === 'note'){
             this.setState({ note: event.target.value });
@@ -44,9 +45,9 @@ class NewDrive extends React.Component {
         return (
             <div className="NewDrive">
                 <div className="row">
-                    <label className="columns small-9">Number of passengers:</label>
+                    <label className="columns small-10">Number of passengers:</label>
                     <input 
-                        className="columns small-3" 
+                        className="columns small-2" 
                         value={this.state.passengers}
                         onChange={this.handleChange} 
                         name="passengers" 
@@ -57,19 +58,20 @@ class NewDrive extends React.Component {
                     <textarea 
                         rows="6"
                         name='note' 
-                        className="columns small-11 small-centered" 
+                        className="columns small-12 small-centered" 
                         onChange={this.handleChange} 
                         value={this.state.note} 
                         placeholder="Describe location to meet and your attire, so riders can find you!"/>
                 </div>
                 <div className="row">
                     <button 
-                        className="columns small-6 small-centered" 
+                        className="columns small-4 small-centered" 
                         onClick={this.handleClick}>Confirm Drive</button>
                 </div>
             </div>
         )
     }
+
 }
 
 export default NewDrive;

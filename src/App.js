@@ -23,7 +23,7 @@ class App extends Component {
     return (
     <Router>
         <div className="row">
-          <div className="App columns small-12 medium-6 large-4 xlarge-4 small-centered">
+          <div className="App columns small-12 medium-8 large-7 xlarge-6 small-centered">
             <Header />
             <Route exact path="/" component={LoginContainer}/>
             <Route path="/dashboard" component={Dashboard}/>
