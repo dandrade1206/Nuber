@@ -11,7 +11,10 @@ function mapStateToProps(store, props) {
           minute: store.datetime.minute,
           ampm: store.datetime.ampm  
         },
-        direction: store.direction
+        direction: store.direction,
+        user: {
+            key: store.user.key
+        }
     }
 }
 

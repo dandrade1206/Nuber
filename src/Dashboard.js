@@ -3,10 +3,9 @@ import FilterRidesContainer from './FilterRidesContainer';
 import ListRides from './ListRides'
 
 const Dashboard = (props) => {
-    console.log(props)
     return(
         <div>
-            <FilterRidesContainer/>
+            <FilterRidesContainer history={props.history}/>
             <ListRides history={props.history}/>
         </div>
     )

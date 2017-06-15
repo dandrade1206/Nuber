@@ -1,12 +1,12 @@
 import React from 'react'
 import FilterRidesContainer from './FilterRidesContainer';
-import NewDrive from './NewDrive'
+import NewDriveContainer from './NewDriveContainer'
 
 const CreateRide = (props) => {
     return(
         <div>
             <FilterRidesContainer/>
-            <NewDrive history={props.history}/>
+            <NewDriveContainer history={props.history}/>
         </div>
     )
 }
