@@ -1,9 +1,16 @@
 import React from 'react'
-const FilterRides = ({datetime, direction, handleSwitch, processDate, processHour, processMin, processAMPM}) => {
+const FilterRides = ({user, datetime, direction, handleSwitch, processDate, processHour, processMin, processAMPM, history}) => {
+    
+    // const checkLoggedin = () => {
+    //     if (!user.key) {
+    //         history.push('/');
+    //     }
+    // }
+    // checkLoggedin();
     return(
         <div>
             <div className="row">
-                <div className="small-6 small-centered columns">
+                <div className="small-8 small-centered columns">
                     <input type="date" name='date' onChange={processDate} placeholder='Select a date' value={datetime.date}/>
                 </div>
             </div>
@@ -35,7 +42,7 @@ const FilterRides = ({datetime, direction, handleSwitch, processDate, processHou
                     </select>                
                 </div>
                 <div className="small-4 columns">
-                    <select onChange={processAMPM} value={datetime.AMPM}>
+                    <select onChange={processAMPM} value={datetime.ampm}>
                         <option></option>
                         <option value='AM'>AM</option>    
                         <option value='PM'>PM</option>
