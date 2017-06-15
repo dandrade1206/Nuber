@@ -29,3 +29,7 @@ img.logo {
 textarea{
   resize: none
 }
+.dash {
+ height: 20px;
+ text-align: left;
+}
