@@ -4,10 +4,9 @@ import moment from 'moment'
 
 function mapStatetoProps(store, props) {
     return {
-        rides: store.rides
+        rides: store.rides,
+        user: store.user.key
     }
 }
-function mapDispatchToProps(dispatch, props) {
-    return {}
-}
- export default connect(mapStatetoProps, mapDispatchToProps)(ListRides)
+
+ export default connect(mapStatetoProps, null)(ListRides)

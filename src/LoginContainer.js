@@ -22,7 +22,11 @@ function mapDispatchToProps(dispatch, props) {
         setRides: (rides) => dispatch({
             type: "FETCH_MY_RIDES",
             rides
-        })
+        }),
+        setDrives: (drives) => dispatch({
+            type: "FETCH_MY_DRIVES",
+            drives
+        }),        
     }
 }
 

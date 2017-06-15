@@ -50,9 +50,12 @@ const rides = (state = [], action) => {
         case 'CANCEL':
             return state.map(r => ride(r, action))
         case 'FETCH_MY_RIDES':
-            return {
-                rides: action.rides
-            }
+            return action.rides
+        case 'FETCH_MY_DRIVES':
+             return [
+                 ...state,
+                 ...action.drives
+             ]        
         default:
             return state;
     }

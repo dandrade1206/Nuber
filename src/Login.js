@@ -14,9 +14,18 @@ class Login extends Component {
       .then((res) => {
         if (res.data.VALID_USER) {
           this.props.loginUser(res.data.user_key, this.state.name, this.state.email);
+
           axios.get(`https://nuberapi.herokuapp.com/myrides/${res.data.user_key}`)
             .then((res)=>{
               this.props.setRides(res.data.rides)
+
+            })
+            .then(()=>{
+              axios.get(`https://nuberapi.herokuapp.com/driver/${res.data.user_key}`)
+                .then((res)=>{
+                  this.props.setDrives(res.data.rides)
+                  this.props.history.push('/dashboard');
+                })              
             })
         }       
       })
@@ -24,7 +33,7 @@ class Login extends Component {
         // Need to add some error messaging to the front-end here..
         console.log(err);
       })
-    this.props.history.push('/dashboard');
+    
   }
 
   handleChange = (event) => {
