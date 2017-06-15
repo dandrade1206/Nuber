@@ -20,20 +20,36 @@ class Login extends Component {
 
   handleClick = (event) => {
     event.preventDefault()
-      
+
       this.setState({ errors: {}, sumbitted: true });
 
-        axios.get(`https://nuberapi.herokuapp.com/login/${this.state.email}`)
-          .then((res) => {
-            if (res.data.VALID_USER) {
-              this.props.loginUser(res.data.user_key, this.state.username, this.state.email);
-            }       
-          })
-          .catch((err) => {
-            // Need to add some error messaging to the front-end here..
-            console.log(err);
-          })
-        this.props.history.push('/dashboard');
+    axios.get(`https://nuberapi.herokuapp.com/login/${this.state.email}`)
+      .then((res) => {
+        if (res.data.VALID_USER) {
+          console.log(res.data);
+          this.props.loginUser(res.data.user_key, this.state.name, this.state.email);
+
+
+          axios.get(`https://nuberapi.herokuapp.com/myrides/${res.data.user_key}`)
+            .then((res)=>{
+              this.props.setRides(res.data.rides)
+
+            })
+            .then(()=>{
+              axios.get(`https://nuberapi.herokuapp.com/driver/${res.data.user_key}`)
+                .then((res)=>{
+                  this.props.setDrives(res.data.rides)
+                  this.props.history.push('/dashboard');
+                })              
+            })
+
+        }       
+      })
+      .catch((err) => {
+        // Need to add some error messaging to the front-end here..
+        console.log(err);
+      })
+
   }
 
 
